@@ -1,6 +1,7 @@
 "use strict";
 
 const Promise = global.Promise || require("promise");
+const port = process.env.PORT || 3000
 
 const express = require("express");
 const exphbs = require("express-handlebars"); // "express-handlebars"
@@ -101,6 +102,6 @@ app.get("/echo/:message?", exposeTemplates, function (req, res) {
 
 app.use(express.static("public/"));
 
-app.listen(3000, function () {
-	console.log("express-handlebars example server listening on: 3000");
-});
+
+
+app.listen(port, () => console.log(`Listening on port ${port}...`))
